@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorPicker suite snapshop test of the ColorPicker 1`] = `
+<body>
+  <div>
+    <span
+      class="sc-hLseeU cgmizj"
+    >
+      <h3
+        class="sc-beqWaB kcKTaF text"
+      >
+        React Colorful 🎨
+      </h3>
+      <div
+        class="react-colorful"
+        data-testid="color-picker"
+      >
+        <div
+          class="react-colorful__saturation"
+        >
+          <div
+            aria-label="Color"
+            aria-valuetext="Saturation NaN%, Brightness NaN%"
+            class="react-colorful__interactive"
+            role="slider"
+            tabindex="0"
+          >
+            <div
+              class="react-colorful__pointer react-colorful__saturation-pointer"
+            >
+              <div
+                class="react-colorful__pointer-fill"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="react-colorful__hue"
+        >
+          <div
+            aria-label="Hue"
+            aria-valuemax="360"
+            aria-valuemin="0"
+            aria-valuenow="NaN"
+            class="react-colorful__interactive"
+            role="slider"
+            tabindex="0"
+          >
+            <div
+              class="react-colorful__pointer react-colorful__hue-pointer"
+              style="top: 50%;"
+            >
+              <div
+                class="react-colorful__pointer-fill"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="react-colorful__alpha react-colorful__last-control"
+        >
+          <div
+            class="react-colorful__alpha-gradient"
+          />
+          <div
+            aria-label="Alpha"
+            aria-valuemax="100"
+            aria-valuemin="0"
+            aria-valuenow="NaN"
+            aria-valuetext="NaN%"
+            class="react-colorful__interactive"
+            role="slider"
+            tabindex="0"
+          >
+            <div
+              class="react-colorful__pointer react-colorful__alpha-pointer"
+              style="top: 50%;"
+            >
+              <div
+                class="react-colorful__pointer-fill"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </span>
+  </div>
+</body>
+`;

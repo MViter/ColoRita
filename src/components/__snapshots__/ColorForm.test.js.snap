@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorForm suite snapshop test of the form 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-fsQiph dVLHFQ"
+    >
+      <form
+        class="sc-qRumB iXxkaM"
+        data-testid="color-input-form"
+      >
+        <p
+          class="text"
+        >
+          Enter RGB color:
+        </p>
+        <div
+          class="sc-csCMJt jYAPGn"
+        >
+          <label
+            class="text"
+            for="r"
+          >
+            R
+            :
+             
+          </label>
+          <input
+            class="sc-irTswW dncpjJ text"
+            color="#FFF"
+            data-testid="r-input"
+            id="r"
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-csCMJt jYAPGn"
+        >
+          <label
+            class="text"
+            for="g"
+          >
+            G
+            :
+             
+          </label>
+          <input
+            class="sc-irTswW dncpjJ text"
+            color="#FFF"
+            data-testid="g-input"
+            id="g"
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          class="sc-csCMJt jYAPGn"
+        >
+          <label
+            class="text"
+            for="b"
+          >
+            B
+            :
+             
+          </label>
+          <input
+            class="sc-irTswW dncpjJ text"
+            color="#FFF"
+            data-testid="b-input"
+            id="b"
+            type="number"
+            value=""
+          />
+        </div>
+        <button
+          class="sc-jsMahE ipWFYV"
+          color="#FFF"
+          data-testid="submit-color"
+          type="number"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+`;
