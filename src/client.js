@@ -1,5 +1,7 @@
 import { getRGBAColorString } from './utils'
 
+const baseURL = `https://www.thecolorapi.com`
+
 export async function client(url) {
     return fetch(url)
       .then((response) => response.json())
@@ -7,12 +9,12 @@ export async function client(url) {
   }
   
 export async function getColorInfo(color) {
-  return await client(`https://www.thecolorapi.com/id?rgb=${getRGBAColorString(color)}`);
+  return await client(`${baseURL}/id?rgb=${getRGBAColorString(color)}`);
 }
 
-export async function getColorSchema(color) {
+export async function getColorSchema(color, count = 6) {
     const colorToRequest = getRGBAColorString(color)
 
-    return await client(`https://www.thecolorapi.com/scheme?rgb=${colorToRequest}mode=triad&count=6`);
+    return await client(`${baseURL}/scheme?rgb=${colorToRequest}mode=triad&count=${count}`);
 }
 

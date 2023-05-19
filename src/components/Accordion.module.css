@@ -1,0 +1,15 @@
+.title {
+    color: red;
+}
+
+.content {
+    color: blue;
+}
+
+.item {
+    width: 100px
+}
+
+.accordion {
+    width: 200px
+}

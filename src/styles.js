@@ -5,6 +5,18 @@ import { Tooltip } from 'react-tippy';
 
 // setup(React.createElement);
 
+export const MainAppContainer = styled.div `{
+  text-align: center;
+}`
+
+export const ColorItemsContainer = styled.div`
+  display: inline-flex;
+  max-width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+`
+
 export const HeaderTitle = styled.h3` {
   display: flex;
   flex-direction: column;
@@ -12,7 +24,7 @@ export const HeaderTitle = styled.h3` {
   align-items: center;
   margin-top: 20px;
   margin-bottom: 16px;
-  font-size: 44px;
+  font-size: 36px;
   line-height: 1;
   color: black;
   padding-top: 20px;
@@ -75,12 +87,6 @@ export const ColorHandlersContainer = styled('div') `{
   display: flex;
   flex-direction: column;
 }`
-
-// export const StyledButton = styled.button `{
-//   max-width: 100px;
-//   margin-top: 20px;
-//   background-color: ${props => props.bgColor};
-// }`
 
 export const ColorSchemaContainer = styled('div') `{
   position: absolute;
@@ -193,4 +199,17 @@ export const ImageContainer = styled('div') `{
   width: 100px;
   height: 200px;
   color: lightgrey;
+  img {
+    border-radius: 20px;
+  }
+}`
+
+export const ColorItemContainer = styled('span') `{
+  display: inline-block;
+  min-width: 20px;
+  height: 20px;
+  display: inline-block;
+  white-space:nowrap;
+  max-inline-size: 30px;
+  border: 1px solid black;
 }`

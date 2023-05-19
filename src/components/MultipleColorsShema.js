@@ -5,7 +5,7 @@ import 'react-tippy/dist/tippy.css'
 import { TextDescription, ColorSchemaContainer, ImageContainer } from '../styles.js'
 import { setTextColor, getTextColor } from '../utils'
 
-function MultipleColorsShema({ color }) {
+function MultipleColorsSchema({ color }) {
   const data = useGetColorSchemaQuery(color)
   useEffect(() => {
     setTextColor(getTextColor(color))
@@ -16,12 +16,12 @@ function MultipleColorsShema({ color }) {
   return <ColorSchemaContainer>
         <TextDescription className="text">SCHEMA:</TextDescription>
         <ImageContainer>
-            <img src={data?.image?.named} />
+            <img src={data?.image?.named} alt="Here can be your adverticement"/>
         </ImageContainer>
     </ColorSchemaContainer>
 }
 
 // export default MultipleColorsShema // see with console.log() uncommented
 
-export default MultipleColorsShema
-React.memo(MultipleColorsShema)
+export default MultipleColorsSchema
+React.memo(MultipleColorsSchema)

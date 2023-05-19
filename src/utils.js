@@ -1,6 +1,11 @@
 // See http://www.w3.org/TR/AERT#color-contrast
 export const getBrightness = ({ r, g, b }) => (r * 299 + g * 587 + b * 114) / 1000
-export const getRGBAColorString = ({ r, g, b, a = 1 }) => `rgba(${r}, ${g}, ${b}, ${a})`
+export const getRGBAColorString = (color) => {
+    const { r = 0, g = 0, b = 0, a = 1 } = color
+    const res = `rgba(${r}, ${g}, ${b}, ${a})`
+
+    return res
+}
 export const getTextColor = color => getBrightness(color) > 128 || color.a < 0.5 ? "#000" : "#FFF"
 export const RGBAToHexA = (rgba, forceRemoveAlpha = false) => {
     if (rgba.includes('#')) return rgba
@@ -28,4 +33,24 @@ export const setTextColor = (textColor) => {
     textElements.forEach(el => {
       el.style.color = textColor
     })
+}
+
+export const getTooltipInfo = (data) => {
+  return !data ? null : (<div>
+    Color name: <strong>{data.name.value}</strong><br />
+    Color hex: <strong>{data.hex.value}</strong><br />
+    Color clean hex: <strong>{data.hex.clean}</strong><br />
+    Color closest hex: <strong>{data.name.closest_named_hex}</strong><br />
+    Distance: <strong>{data?.name?.distance}</strong><br />
+    Is exact color name: <strong>{data?.name?.exact_match_name === false ? 'No' : 'Yes'}</strong><br />
+    Contrast: <strong>{data?.contrast?.value}</strong><br /><br />
+
+    Color models:
+    RGB: <strong>{data?.rgb?.value}</strong><br />
+    HEX: <strong>{data?.hex?.value}</strong><br />
+    HSL: <strong>{data?.hsl?.value}</strong><br />
+    HSV: <strong>{data?.hsv?.value}</strong><br /> 
+    Color sample:<br /> 
+    <img src={data?.image?.named} alt={data?.name?.value} width="50" height="50" />
+</div>)
 }

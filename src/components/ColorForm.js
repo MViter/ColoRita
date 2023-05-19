@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import 'react-tooltip/dist/react-tooltip.css';
 import 'react-tippy/dist/tippy.css';
 import {
@@ -8,22 +8,20 @@ import {
 } from '../styles.js';
 import {
 	getRGBAColorString,
-	getTextColor,
+	getTextColor, RGBAToHexA,
 } from '../utils';
 import ColorFormInput from './ColorFormInput'
 
 const initialColor = { r: '', g: '', b: '', a: 1};
 
-function ColorForm({ color: parentColor, setColor: setParentColor}) {
+export const ColorForm = React.memo(({ color: parentColor, setColor: setParentColor, isConvert = false}) => {
 	const [color, setColor] = useState(initialColor);
-
+	const [convertedHexResult, setConvertedResult] = useState(null)
 	function handleColorChange(e) {
-		console.log('onChange');
 		setColor({ ...color, [`${e.target.id}`]: +e.target.value });
 	}
 
 	function validateColor(e) {
-		console.log('onInput');
 		if (+e.target.value > 255 || +e.target.value < 0) {
 			let el = document.querySelector(`#${e.target.id}`)
 			el.value = color[e.target.id]
@@ -33,7 +31,13 @@ function ColorForm({ color: parentColor, setColor: setParentColor}) {
 
 	function onSubmit(e) {
 		e.preventDefault()
-		setParentColor(color)
+		setParentColor(color, (arg1) => {
+			console.log(arg1)
+		})
+		if (isConvert) {
+			const result = RGBAToHexA(getRGBAColorString(color), true)
+			setConvertedResult(result)
+		}
 	}
 
 	return (
@@ -42,7 +46,7 @@ function ColorForm({ color: parentColor, setColor: setParentColor}) {
 				onSubmit={onSubmit}
 				data-testid='color-input-form'
 			>
-				<p className='text'>Enter RGB color:</p>
+				<p className='text'>{isConvert ? 'Convert' : 'Enter'} RGB color:</p>
 				<ColorFormInput id='r' onChange={handleColorChange} onInput={validateColor} value={color.r} color={parentColor} />
 				<ColorFormInput id='g' onChange={handleColorChange} onInput={validateColor} value={color.g} color={parentColor} />
 				<ColorFormInput id='b' onChange={handleColorChange} onInput={validateColor} value={color.b} color={parentColor} />
@@ -55,11 +59,13 @@ function ColorForm({ color: parentColor, setColor: setParentColor}) {
 					Submit
 				</StyledButton>
 			</StyledForm>
+			{isConvert && convertedHexResult}
 		</ColorInputContainer>
 	);
-}
+})
 
 // export default MultipleColorsShema // see with console.log() uncommented
 
-export default ColorForm;
-React.memo(ColorForm);
+// export default ColorForm;
+// React.memo(ColorForm);
+

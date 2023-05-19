@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { render, screen, waitFor, fireEvent } from '@testing-library/react';
 // import user from '@testing-library/user-event'
 //import fireEvent from '@testing-library/user-event'
-import ColorForm  from './ColorForm';
+import { ColorForm }  from './ColorForm';
 
 const c1 = { r: 255, g: 255, b: 255, a: 1}
 const c2 = { r: 20, g: 230, b: 40, a: 1}
@@ -34,15 +34,18 @@ beforeEach(() => {
 describe('ColorForm suite', () => {
 
 test('verify ColorInput mock function should be called', () => {
-    const { getByTestId } = render(<ColorForm color={'#00FF00'} setColor={mock}/>)
-
+    const { getByTestId } = render(<ColorForm color={'#00FF00'} setColor={mockSetColor}/>)
+    const mockConsoleLog = jest.spyOn(global.console, 'log')
     fireEvent.click(getByTestId('submit-color'));
-    expect(mock).toHaveBeenCalledWith({
+    expect(mockSetColor).toHaveBeenCalledWith({
 		r: '',
 		g: '',
 		b: '',
 		a: '1',
-	})
+	}, expect.any(Function))
+    const callback = mockSetColor.mock.calls[0][1] // 0 - function calls, 1 - 2nd param of the function
+    callback('asd')
+    expect(mockConsoleLog).toHaveBeenCalledWith('asd')
   })
   
   // const mockCallback = jest.fn(x => 42 + x);
@@ -78,6 +81,7 @@ test('verify ColorInput mock function should be called', () => {
     // useState.mockImplementation(() => [changedColor, mockSetColor])
     const { getByTestId } = render(<ColorForm color={'#00FF00'} setColor={mock}/>)
     // debug()
+    screen.logTestingPlaygroundURL();
     fireEvent.change(getByTestId('r-input'), { target: {value: '255', id: 'r'}});
     expect(mockSetColor).toHaveBeenCalledWith({"a": "1", "b": "", "g": "", "r": 255})
   })

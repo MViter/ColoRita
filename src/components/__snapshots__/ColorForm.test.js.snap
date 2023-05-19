@@ -4,10 +4,10 @@ exports[`ColorForm suite snapshop test of the form 1`] = `
 <body>
   <div>
     <div
-      class="sc-fsQiph dVLHFQ"
+      class="sc-jsMahE losdnx"
     >
       <form
-        class="sc-qRumB iXxkaM"
+        class="sc-kFuwaP eanISr"
         data-testid="color-input-form"
       >
         <p
@@ -16,7 +16,7 @@ exports[`ColorForm suite snapshop test of the form 1`] = `
           Enter RGB color:
         </p>
         <div
-          class="sc-csCMJt jYAPGn"
+          class="sc-brKeYL hsHmUE"
         >
           <label
             class="text"
@@ -27,7 +27,7 @@ exports[`ColorForm suite snapshop test of the form 1`] = `
              
           </label>
           <input
-            class="sc-irTswW dncpjJ text"
+            class="sc-fbJfA eMEfSY text"
             color="#FFF"
             data-testid="r-input"
             id="r"
@@ -36,7 +36,7 @@ exports[`ColorForm suite snapshop test of the form 1`] = `
           />
         </div>
         <div
-          class="sc-csCMJt jYAPGn"
+          class="sc-brKeYL hsHmUE"
         >
           <label
             class="text"
@@ -47,7 +47,7 @@ exports[`ColorForm suite snapshop test of the form 1`] = `
              
           </label>
           <input
-            class="sc-irTswW dncpjJ text"
+            class="sc-fbJfA eMEfSY text"
             color="#FFF"
             data-testid="g-input"
             id="g"
@@ -56,7 +56,7 @@ exports[`ColorForm suite snapshop test of the form 1`] = `
           />
         </div>
         <div
-          class="sc-csCMJt jYAPGn"
+          class="sc-brKeYL hsHmUE"
         >
           <label
             class="text"
@@ -67,7 +67,7 @@ exports[`ColorForm suite snapshop test of the form 1`] = `
              
           </label>
           <input
-            class="sc-irTswW dncpjJ text"
+            class="sc-fbJfA eMEfSY text"
             color="#FFF"
             data-testid="b-input"
             id="b"
@@ -76,7 +76,7 @@ exports[`ColorForm suite snapshop test of the form 1`] = `
           />
         </div>
         <button
-          class="sc-jsMahE ipWFYV"
+          class="sc-irTswW euZKUX"
           color="#FFF"
           data-testid="submit-color"
           type="number"

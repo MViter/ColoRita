@@ -4,7 +4,7 @@ import { HeaderTitle, PaletteContainer } from '../styles.js';
 
 const ColorPicker = ({ color, setColor }) => {
     return (<PaletteContainer>
-        <HeaderTitle className="text">React Colorful 🎨</HeaderTitle>
+        <HeaderTitle className="text">Get your emotion color 🎨</HeaderTitle>
         <RgbaColorPicker data-testid="color-picker" color={color} onChange={setColor} />
     </PaletteContainer>)
 }
